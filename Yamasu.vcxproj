@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{1B8103F7-F793-47B0-9FBE-44EC66BC319D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Yamasu</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)build\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</IntDir>
+    <ExecutablePath>$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);$(ExecutablePath);$(DXSDK_DIR)Utilities\bin\x86</ExecutablePath>
+    <IncludePath>$(SolutionDir)Yamasu\LIB\freetype;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(IncludePath);$(DXSDK_DIR)Include</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;$(LibraryPath);$(DXSDK_DIR)Lib\x86</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)build\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</IntDir>
+    <ExecutablePath>$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);$(ExecutablePath);$(DXSDK_DIR)Utilities\bin\x86</ExecutablePath>
+    <IncludePath>$(SolutionDir)Yamasu\LIB\freetype;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(IncludePath);$(DXSDK_DIR)Include</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;$(LibraryPath);$(DXSDK_DIR)Lib\x86</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;Yamasu_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+      <AdditionalOptions>/ignore:4099 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;Yamasu_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Yamasu\Features\EnginePrediction.cpp" />
+    <ClCompile Include="Yamasu\Hooks.cpp" />
+    <ClCompile Include="Yamasu\DLLMain.cpp" />
+    <ClCompile Include="Yamasu\imgui\imgui.cpp" />
+    <ClCompile Include="Yamasu\imgui\imgui_demo.cpp" />
+    <ClCompile Include="Yamasu\imgui\imgui_draw.cpp" />
+    <ClCompile Include="Yamasu\imgui\imgui_impl_dx9.cpp" />
+    <ClCompile Include="Yamasu\imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="Yamasu\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="Yamasu\menu\Menu.cpp" />
+    <ClCompile Include="Yamasu\Utils\GlobalVars.cpp" />
+    <ClCompile Include="Yamasu\Utils\Interfaces.cpp" />
+    <ClCompile Include="Yamasu\Utils\NetvarManager.cpp" />
+    <ClCompile Include="Yamasu\Features\ESP.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Yamasu\Features\EnginePrediction.h" />
+    <ClInclude Include="Yamasu\Features\Features.h" />
+    <ClInclude Include="Yamasu\Features\Misc.h" />
+    <ClInclude Include="Yamasu\Hooks.h" />
+    <ClInclude Include="Yamasu\imgui\imconfig.h" />
+    <ClInclude Include="Yamasu\imgui\imgui.h" />
+    <ClInclude Include="Yamasu\imgui\imgui_impl_dx9.h" />
+    <ClInclude Include="Yamasu\imgui\imgui_impl_win32.h" />
+    <ClInclude Include="Yamasu\imgui\imgui_internal.h" />
+    <ClInclude Include="Yamasu\imgui\imstb_rectpack.h" />
+    <ClInclude Include="Yamasu\imgui\imstb_textedit.h" />
+    <ClInclude Include="Yamasu\imgui\imstb_truetype.h" />
+    <ClInclude Include="Yamasu\menu\config.h" />
+    <ClInclude Include="Yamasu\menu\Menu.h" />
+    <ClInclude Include="Yamasu\menu\MenuBackground.h" />
+    <ClInclude Include="Yamasu\menu\MenuControls.h" />
+    <ClInclude Include="Yamasu\menu\MenuFonts.h" />
+    <ClInclude Include="Yamasu\SDK\CGlobalVarsBase.h" />
+    <ClInclude Include="Yamasu\SDK\CHandle.h" />
+    <ClInclude Include="Yamasu\SDK\CEntity.h" />
+    <ClInclude Include="Yamasu\SDK\CInput.h" />
+    <ClInclude Include="Yamasu\SDK\ClientClass.h" />
+    <ClInclude Include="Yamasu\SDK\singleton.h" />
+    <ClInclude Include="Yamasu\Utils\Color.h" />
+    <ClInclude Include="Yamasu\SDK\CPrediction.h" />
+    <ClInclude Include="Yamasu\SDK\Definitions.h" />
+    <ClInclude Include="Yamasu\SDK\IBaseClientDll.h" />
+    <ClInclude Include="Yamasu\SDK\IClientEntity.h" />
+    <ClInclude Include="Yamasu\SDK\IClientEntityList.h" />
+    <ClInclude Include="Yamasu\SDK\IClientMode.h" />
+    <ClInclude Include="Yamasu\SDK\IClientNetworkable.h" />
+    <ClInclude Include="Yamasu\SDK\IClientRenderable.h" />
+    <ClInclude Include="Yamasu\SDK\IClientThinkable.h" />
+    <ClInclude Include="Yamasu\SDK\IClientUnknown.h" />
+    <ClInclude Include="Yamasu\SDK\IGameEvent.h" />
+    <ClInclude Include="Yamasu\SDK\IVEngineClient.h" />
+    <ClInclude Include="Yamasu\SDK\KeyValues.h" />
+    <ClInclude Include="Yamasu\SDK\PlayerInfo.h" />
+    <ClInclude Include="Yamasu\EventListener.h" />
+    <ClInclude Include="Yamasu\Utils\GlobalVars.h" />
+    <ClInclude Include="Yamasu\Utils\Interfaces.h" />
+    <ClInclude Include="Yamasu\SDK\Recv.h" />
+    <ClInclude Include="Yamasu\SDK\Vector.h" />
+    <ClInclude Include="Yamasu\SDK\VMatrix.h" />
+    <ClInclude Include="Yamasu\Utils\NetvarManager.h" />
+    <ClInclude Include="Yamasu\Utils\Utils.h" />
+    <ClInclude Include="Yamasu\Features\ESP.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
